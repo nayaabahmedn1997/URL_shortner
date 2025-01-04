@@ -19,14 +19,16 @@ const userSchema = mongoose.Schema({
     resetToken:{
         type:String,
         default:""
+    },
+    activationToken:{
+         type:String,
+         default:""
+    },
+    activatedAt:{
+        type:Date
     }
 });
 
-userModel.pre('save',async (next)=>{
-    if (!this.isModified("password")) return next();
-    this.password = await bcrypt.hash(this.password, process.env.SALT| 7)
-    next();
-});
 
 const userModel  = mongoose.model('user', userSchema);
 

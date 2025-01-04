@@ -22,7 +22,11 @@ const urlSchema = mongoose.Schema({
                 default: Date.now
             }
         }
-]
+],
+clickCount:{
+    type: Number,
+    default:0
+}
 });
 
 const urlModel = mongoose.model('url', urlSchema);
