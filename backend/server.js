@@ -6,7 +6,7 @@ dotenv.config();
 
 
 
-const PORT  = 6000;
+const PORT  = 6002;
 
 
 

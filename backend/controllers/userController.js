@@ -125,7 +125,7 @@ const getUserData = async (req, res)=>{
             });
         }
         res.status(200).json({
-           
+           message:"User data successfully fetched",
            userData:{ 
             ...user._doc,
             password:""
