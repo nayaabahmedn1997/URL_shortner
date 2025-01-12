@@ -3,6 +3,8 @@ import '../styles/Tabs.css'; // Import custom CSS for styling
 import '../styles/registerForm.css'
 
 import URLModal from './URLModal';
+import AvailableURLS from './AvailableURLS';
+import Dashboard from './Dashboard';
 
 function Tabs({userData}) {
   const [activeTab, setActiveTab] = useState('tab1');
@@ -42,10 +44,7 @@ function Tabs({userData}) {
       {/* Tab content */}
       <div className="tab-content">
         {activeTab === 'tab1' && (
-          <div>
-            <h2>Dashboard</h2>
-            <p>Welcome to our tab component tutorial! This tab covers the basics of what you'll learn in this example.</p>
-          </div>
+         <Dashboard />
         )}
         {activeTab === 'tab2' && (
           
@@ -53,10 +52,7 @@ function Tabs({userData}) {
           
         )}
         {activeTab === 'tab3' && (
-          <div>
-            <h2>URLs</h2>
-            <p>Our tab component is fully responsive, customizable, and easy to integrate into any React project.</p>
-          </div>
+          <AvailableURLS />
         )}
         
         

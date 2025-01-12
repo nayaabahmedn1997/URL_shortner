@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { generateToast, TOAST_SUCCESS, TOAST_WARN } from '../utils/generateToast';
+import axiosInstance from '../utils/axiosInstance';
 
 const URLModal = () => {
     const [url, setUrl] = useState();
@@ -7,11 +9,21 @@ const URLModal = () => {
         setUrl(e.target.value);
     }
 
-    const handleSubmit = (e)=>{
+    const handleSubmit = async (e)=>{
         e.preventDefault();
+        const token = localStorage.getItem("token-url");
         try {
-            console.log(e.target.value)
+          const postData = {url};
+           const res =await axiosInstance.post("/api/url/generate-url", postData,{
+            headers:{
+              authorization:`Bearer ${token}`
+            }
+           });
+           const data = await res.data;
+           generateToast(data.message, TOAST_SUCCESS);
+           setUrl("")
         } catch (error) {
+          generateToast(error.message, TOAST_WARN)
             console.log(error);
         }
     }

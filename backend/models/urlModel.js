@@ -3,30 +3,31 @@ const mongoose = require('mongoose');
 
 
 const urlSchema = mongoose.Schema({
-    shortID : {
+    shortID: {
         type: String,
         required: true,
-        unique:true
+        unique: true
     },
-    redirectURL:{
+    redirectURL: {
         type: String,
     },
-    visitHistory:[
+    visitHistory: [
         {
-        id:{
-                type:mongoose.Schema.Types.ObjectId,
-                ref:"user"
-            },
-            visitedAt:{
-                type:Date,
+
+            visitedAt: {
+                type: Date,
                 default: Date.now
             }
         }
-],
-clickCount:{
-    type: Number,
-    default:0
-}
+    ],
+    clickCount: {
+        type: Number,
+        default: 0
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 const urlModel = mongoose.model('url', urlSchema);

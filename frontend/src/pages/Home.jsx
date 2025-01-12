@@ -12,7 +12,6 @@ const Home = () => {
   const [userData, setUserData] = useState();
   const [urlData, setUrlData] = useState();
   const [pillsData, setPillsData] = useState('dashBoard');
-  console.log(pillsData)
   const handlePreload = async ()=>{
     try { 
       const token = localStorage.getItem("token-url");
