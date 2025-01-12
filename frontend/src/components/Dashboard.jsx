@@ -41,7 +41,6 @@ const Dashboard = () => {
    
   }, []);
 
-  console.log(urlsPerDay)
   const barChartData = {
   
     labels: urlsPerDay.map((item) => item._id), // Dates
@@ -54,7 +53,6 @@ const Dashboard = () => {
     ],
   };
 
-  console.log(barChartData);
 
   const lineChartData = {
     labels: urlsPerMonth.map((item) => item._id), // Months

@@ -60,3 +60,14 @@
 {
     background-color: #c7cec3 !important ;
 }
+
+.header-info{
+display: flex;
+justify-content: space-between;
+align-content: center;
+}
+.username
+{
+    text-transform: uppercase;
+    text-decoration: underline;
+}

@@ -28,7 +28,6 @@ const AvailableURLS = () => {
         getPreloadData();
        
     }, []);
-    console.log(urlData)
   return (
     <div className='container'>
         <h1>URL list</h1>

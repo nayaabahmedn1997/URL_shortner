@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import axiosInstance from '../utils/axiosInstance';
 import { generateToast, TOAST_SUCCESS, TOAST_WARN } from '../utils/generateToast';
-import Card from 'react-bootstrap/Card';
 import Tabs from '../components/Tab';
 
 
@@ -10,8 +9,7 @@ const Home = () => {
 
   const navigate = useNavigate();
   const [userData, setUserData] = useState();
-  const [urlData, setUrlData] = useState();
-  const [pillsData, setPillsData] = useState('dashBoard');
+
   const handlePreload = async ()=>{
     try { 
       const token = localStorage.getItem("token-url");
@@ -23,7 +21,6 @@ const Home = () => {
       const data = await res.data;
       generateToast(data.message, TOAST_SUCCESS);
       setUserData(data.userData);
-      console.log(userData);
       
     } catch (error) {
       generateToast(error.message, TOAST_WARN);
